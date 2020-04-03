@@ -1,0 +1,42 @@
+{
+  "name": "remote-ui-playground-2",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/app.tsx",
+  "hops": {
+    "assetPath": "<basePath>/script",
+    "mixins": [
+      "./remote-ui-config"
+    ]
+  },
+  "scripts": {
+    "start": "hops start",
+    "build": "hops build",
+    "test": "jest",
+    "serve": "hops serve"
+  },
+  "dependencies": {
+    "@remote-ui/core": "^0.0.14",
+    "@remote-ui/react": "^0.0.19",
+    "@remote-ui/web-workers": "^0.0.6",
+    "hops": "^12.1.2",
+    "hops-postcss": "^12.1.2",
+    "hops-typescript": "^12.1.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet-async": "^1.0.4",
+    "react-router-dom": "^5.1.2"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "jest-preset-hops": "^12.1.2",
+    "react-test-renderer": "^16.10.2",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "jest-preset-hops"
+  },
+  "gitHead": "ee8599bbbda0580c58b60aa4277f650039396714",
+  "private": true
+}
