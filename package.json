@@ -19,6 +19,7 @@
     "@remote-ui/core": "^0.0.14",
     "@remote-ui/react": "^0.0.19",
     "@remote-ui/web-workers": "^0.0.6",
+    "@shopify/polaris": "^4.17.0",
     "hops": "^12.1.2",
     "hops-postcss": "^12.1.2",
     "hops-typescript": "^12.1.2",
