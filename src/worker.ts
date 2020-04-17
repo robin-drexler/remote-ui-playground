@@ -4,7 +4,7 @@ import {
   RemoteRoot,
   RemoteReceiver,
   retain,
-  RemoteChannel
+  RemoteChannel,
 } from "@remote-ui/core";
 
 let renderCallback;
@@ -22,7 +22,7 @@ export function run(channel: RemoteChannel) {
   retain(channel);
 
   const remoteRoot = createRemoteRoot(channel, {
-    components: ["Button", "Card"] as any
+    components: ["Button", "Card"] as any,
   });
   renderCallback(remoteRoot);
 }

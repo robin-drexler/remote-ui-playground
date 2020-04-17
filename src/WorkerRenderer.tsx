@@ -2,11 +2,15 @@ import React, { useMemo, useEffect } from "react";
 import {
   RemoteReceiver,
   RemoteRenderer,
-  useWorker
+  useWorker,
 } from "@remote-ui/react/host";
 import { createWorkerFactory } from "@remote-ui/web-workers";
-import { Button, Card, TextField, DataTable } from "@shopify/polaris";
+import { Button, Card, TextField, DataTable, Spinner } from "@shopify/polaris";
 const createWorker = createWorkerFactory(() => import("./worker"));
+
+function Container({ children }: any) {
+  return children;
+}
 
 export function WorkerRenderer({ script }: any) {
   // @ts-ignore
@@ -25,9 +29,17 @@ export function WorkerRenderer({ script }: any) {
   return (
     <RemoteRenderer
       receiver={receiver}
-      components={{ Button, Card, TextField, DataTable }}
+      components={
+        {
+          Button,
+          Card,
+          TextField,
+          DataTable,
+          Spinner,
+          Container,
+          button: "button",
+        } as any
+      }
     />
   );
 }
-
-// The "native" implementations of our remote components:

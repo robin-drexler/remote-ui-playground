@@ -31,3 +31,15 @@ export const DataTable = createRemoteReactComponent<
     "children"
   >
 >("DataTable");
+
+export const Spinner = createRemoteReactComponent<
+  "Spinner",
+  Omit<
+    React.ComponentProps<typeof import("@shopify/polaris").Spinner>,
+    "children"
+  >
+>("Spinner");
+
+export const Container = createRemoteReactComponent<"Container", {}>(
+  "Container"
+);
