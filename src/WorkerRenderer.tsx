@@ -6,11 +6,12 @@ import {
 } from "@remote-ui/react/host";
 import { createWorkerFactory } from "@remote-ui/web-workers";
 import { Button, Card, TextField, DataTable } from "@shopify/polaris";
+
 const createWorker = createWorkerFactory(() => import("./worker"));
 
 export function WorkerRenderer({ script }: any) {
-  // @ts-ignore
-  const receiver = useMemo(() => new RemoteReceiver());
+  const receiver = new RemoteReceiver();
+
   const worker = useWorker(createWorker);
 
   async function initWorker() {
@@ -20,14 +21,17 @@ export function WorkerRenderer({ script }: any) {
 
   useEffect(() => {
     initWorker();
+
   }, [receiver, worker]);
 
-  return (
-    <RemoteRenderer
-      receiver={receiver}
-      components={{ Button, Card, TextField, DataTable }}
-    />
-  );
-}
+  useEffect(() => {
+    return receiver.listen(receiver.root, () => {
+      console.log('LISTEN CB')
+    });
+  }, [receiver]);
 
-// The "native" implementations of our remote components:
+  return <RemoteRenderer
+        receiver={receiver}
+        components={{ Button, TextField, Card, DataTable }}
+      />;
+}

@@ -1,4 +1,4 @@
-import { render } from "hops";
+import { render } from "react-dom";
 import React, { useEffect, useState } from "react";
 import { WorkerRenderer } from "./WorkerRenderer";
 import { createPlainWorkerFactory } from "@remote-ui/web-workers";
@@ -28,4 +28,4 @@ const App = () => {
   );
 };
 
-export default render(<App />);
+render(<App />, document.querySelector('#app'));

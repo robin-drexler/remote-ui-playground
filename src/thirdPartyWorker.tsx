@@ -5,7 +5,7 @@ import { Card, DataTable, TextField, Button } from "./RemoteComponents";
 
 // const Card = 'Card' as any;
 (self as any).addRenderCallback((remoteRoot: RemoteRoot) => {
-  render(<Extension></Extension>, remoteRoot);
+  render(<Extension />, remoteRoot);
 });
 
 const rows = [
@@ -21,8 +21,10 @@ const rows = [
 ];
 
 function Extension() {
+  return <Button >lel</Button>
   const [text, setText] = useState("");
   const [matchedRows, setMatchedRows] = useState(rows);
+
 
   return (
     <Card>

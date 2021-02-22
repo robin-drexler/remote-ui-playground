@@ -7,6 +7,7 @@ import {
   RemoteChannel
 } from "@remote-ui/core";
 
+
 let renderCallback;
 
 (self as any).addRenderCallback = (render: any) => {
@@ -22,7 +23,7 @@ export function run(channel: RemoteChannel) {
   retain(channel);
 
   const remoteRoot = createRemoteRoot(channel, {
-    components: ["Button", "Card"] as any
+    components: ["Button", "Card", "TextField", "DataTable"] as any
   });
   renderCallback(remoteRoot);
 }
